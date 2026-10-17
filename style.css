@@ -1,0 +1,127 @@
+:root {
+  --bg: #e9edf2;
+  --grid: rgba(16, 24, 40, 0.07);
+  --grid-strong: rgba(16, 24, 40, 0.16);
+  --card: #ffffff;
+  --ink: #101828;
+  --muted: #566074;
+  --line: #d5dbe4;
+  --accent: #2f4bff;
+  --accent-ink: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1220;
+    --grid: rgba(255, 255, 255, 0.05);
+    --grid-strong: rgba(255, 255, 255, 0.12);
+    --card: #161d30;
+    --ink: #eef1f8;
+    --muted: #9aa5bd;
+    --line: #2a3350;
+    --accent: #7d92ff;
+    --accent-ink: #0d1220;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: 1rem; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--bg);
+  /* Sudoku-raster: 9x9 cellen, dikkere lijn per 3x3 blok */
+  background-image:
+    linear-gradient(var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-strong) 1px, transparent 1px),
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 168px 168px, 168px 168px, 56px 56px, 56px 56px;
+  background-position: center top;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+h1, h2 {
+  font-family: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  line-height: 1.1;
+  margin: 0;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, .btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.card {
+  width: 100%;
+  max-width: 640px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  box-shadow: 0 18px 50px -24px rgba(16, 24, 40, 0.35);
+}
+
+.card h1 {
+  font-size: clamp(2.4rem, 8vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.role {
+  margin: 0.6rem 0 0;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.bio { margin: 1.5rem 0 0; max-width: 60ch; }
+
+.card h2 {
+  font-size: 1.15rem;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.projects { list-style: none; margin: 0; padding: 0; }
+.projects li {
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--line);
+}
+.projects li:last-child { border-bottom: 1px solid var(--line); }
+.projects strong { display: block; }
+.projects span { color: var(--muted); font-size: 0.97rem; }
+
+.links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.97rem;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { color: var(--accent-ink); filter: brightness(1.08); }
+
+footer { margin-top: 2rem; font-size: 0.9rem; color: var(--muted); }
+
+/* Privacy-pagina */
+.doc { max-width: 720px; }
+.doc h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+.doc p, .doc li { max-width: 65ch; }
+.doc ul { padding-left: 1.2rem; }
+.updated { color: var(--muted); margin: 0.6rem 0 0; }
+.back { display: inline-block; margin-bottom: 1.5rem; font-size: 0.97rem; }
