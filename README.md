@@ -11,7 +11,42 @@ npm install
 npm start
 ```
 
-De productiebuild wordt gemaakt met `npm run build` en komt onder `dist/` te staan.
+De productiebuild wordt gemaakt met `npm run build`. De publiceerbare bestanden komen in `dist/portfolio/browser/` te staan.
+
+## Publiceren op Cloudflare Pages
+
+Deze repository is voorbereid voor automatische deployments vanuit GitHub:
+
+1. Push de wijzigingen naar de `master`-branch van `IvandeJong/Website`.
+2. Open in Cloudflare **Workers & Pages** en kies **Create application → Pages → Connect to Git**.
+3. Autoriseer GitHub en selecteer de repository `IvandeJong/Website`.
+4. Gebruik de volgende buildinstellingen:
+   - Production branch: `master`
+   - Framework preset: `Angular`
+   - Build command: `npm run build`
+   - Build output directory: `dist/portfolio/browser`
+   - Root directory: `/`
+5. Voeg, als Cloudflare de versie niet automatisch uit `.nvmrc` leest, de environment variable `NODE_VERSION` met waarde `22.12.0` toe.
+6. Start de eerste deployment. Cloudflare geeft eerst een tijdelijk `*.pages.dev`-adres.
+
+### Eigen domein
+
+Open na een geslaagde deployment het Pages-project en kies **Custom domains → Set up a custom domain**. Vul `www.ivandejong.nl` in. Kopieer daarna het toegewezen Pages-adres, bijvoorbeeld `projectnaam.pages.dev`, en maak bij de huidige DNS-provider dit record aan:
+
+- Type: `CNAME`
+- Naam/host: `www`
+- Waarde/target: het toegewezen `*.pages.dev`-adres, zonder `https://` of pad
+
+Voeg het aangepaste domein eerst in Cloudflare Pages toe en pas daarna DNS aan. Cloudflare controleert het record en verzorgt vervolgens automatisch het TLS-certificaat. DNS-propagatie kan enige tijd duren.
+
+Een apex-domein zoals `ivandejong.nl` vereist voor Cloudflare Pages normaal Cloudflare-nameservers. Laat daarom bij de huidige provider desgewenst een permanente webforward instellen van `https://ivandejong.nl` naar `https://www.ivandejong.nl`. Als de provider geen HTTPS-forwarding ondersteunt, gebruik dan alleen het `www`-adres of verplaats later het DNS-beheer.
+
+Na activering zijn de website en het Sudoku-privacybeleid bereikbaar via:
+
+- `https://www.ivandejong.nl/`
+- `https://www.ivandejong.nl/sudoku-privacy.html`
+
+Cloudflare bouwt na deze koppeling iedere nieuwe push naar `master` automatisch opnieuw en publiceert de wijziging.
 
 ## Project toevoegen
 
