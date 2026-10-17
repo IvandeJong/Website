@@ -24,7 +24,7 @@ export const PROJECTS: readonly Project[] = [
     description:
       'Een Synology DS220+ NAS als centrale plek voor mijn bestanden en herinneringen. Met Synology Photos beheer ik mijn fotocollectie op mijn eigen server.',
     image: 'images/synology.svg',
-    imageAlt: 'Illustratieve placeholder van een Synology NAS en fotogalerij',
+    imageAlt: 'Illustratie van een Synology NAS en fotogalerij',
     tags: ['Synology DS220+', 'Synology Photos'],
   },
   {
@@ -35,7 +35,7 @@ export const PROJECTS: readonly Project[] = [
     description:
       'Home Assistant draait thuis op de DS220+ en brengt mijn zonnepanelen, een eigen integratie met de Lynk & Co 01 en alle verlichting samen.',
     image: 'images/home-assistant.svg',
-    imageAlt: 'Illustratieve placeholder van een slim huis met zonnepanelen en verlichting',
+    imageAlt: 'Illustratie van een slim huis met zonnepanelen en verlichting',
     tags: ['Zonnepanelen', 'Zigbee', 'Sonoff in-wall switches', 'Philips Hue'],
   },
   {
@@ -46,7 +46,7 @@ export const PROJECTS: readonly Project[] = [
     description:
       'Een Sudoku-app die ik in Unity ontwikkel, met ruimte om puzzels te spelen en steeds verder te bouwen aan de ervaring.',
     image: 'images/sudoku.svg',
-    imageAlt: 'Illustratieve placeholder van een Sudoku-spelbord',
+    imageAlt: 'Illustratie van een Sudoku-spelbord',
     tags: ['Unity', 'Sudoku'],
     link: {
       label: 'Privacybeleid',

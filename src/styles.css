@@ -44,14 +44,8 @@ p { margin: 0; }
 .btn.secondary { background: transparent; }
 .btn.secondary:hover { background: #e7eddd; }
 
-.hero-art { position: relative; display: grid; place-items: center; aspect-ratio: 1; max-width: 420px; width: 100%; margin: auto; border-radius: 50%; background: #e8efd9; overflow: hidden; }
-.art-orbit { position: absolute; width: 75%; height: 75%; border: 1px dashed #92ae7b; border-radius: 50%; transform: rotate(-22deg) scaleX(1.25); }
-.orbit-two { width: 98%; height: 98%; transform: rotate(24deg) scaleX(0.8); }
-.art-core { position: relative; display: grid; place-items: center; width: 49%; aspect-ratio: 1; border-radius: 28%; background: var(--deep); color: var(--accent); font: 800 clamp(3rem, 8vw, 6rem)/1 "Bricolage Grotesque", sans-serif; transform: rotate(-12deg); box-shadow: 15px 20px 0 #c4d8aa; }
-.art-spark { position: absolute; top: -20%; right: -18%; color: #759f43; font-size: 0.6em; }
-.art-label { position: absolute; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; }
-.art-label-top { top: 13%; left: 9%; transform: rotate(-13deg); }
-.art-label-bottom { right: 6%; bottom: 12%; transform: rotate(-13deg); }
+.hero-art { aspect-ratio: 1; max-width: 420px; width: 100%; margin: auto; border-radius: 50%; background: #e8efd9; overflow: hidden; }
+.hero-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .work { padding: clamp(4rem, 7vw, 7rem) 0; border-top: 1px solid var(--line); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2.5rem; }
