@@ -44,13 +44,13 @@ export const PROJECTS: readonly Project[] = [
     type: 'Game development · Unity',
     title: 'Sudoku, op mijn manier.',
     description:
-      'Een Sudoku-app die ik in Unity ontwikkel, met ruimte om puzzels te spelen en steeds verder te bouwen aan de ervaring.',
+      'Een Sudoku-app die ik in Unity heb gemaakt en klaargemaakt voor Google Play. Lees meer over het bouwen, testen en publiceren.',
     image: 'images/sudoku.svg',
     imageAlt: 'Illustratie van een Sudoku-spelbord',
     tags: ['Unity', 'c#', 'Canva', 'Android'],
     link: {
-      label: 'Privacybeleid',
-      url: 'sudoku-privacy.html',
+      label: 'Bekijk het verhaal',
+      url: 'sudoku-release.html',
     },
   },
 ];
