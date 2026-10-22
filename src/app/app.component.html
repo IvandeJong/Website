@@ -3,6 +3,7 @@
     <a class="wordmark" href="#home" aria-label="Ivan de Jong, naar boven">ivan<span>.</span></a>
     <nav aria-label="Hoofdnavigatie">
       <a href="#over">Over mij</a>
+      <a href="#skills">Skills</a>
       <a href="#projecten">Projecten</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -24,9 +25,47 @@
       </div>
     </section>
 
+    <section class="skills" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / Mijn skills</p><h2 id="skills-title">Een sterke basis.<br><em>Breed inzetbaar.</em></h2></div>
+        <p>Van backend tot deployment: de technieken waarmee ik oplossingen bouw en blijf verbeteren.</p>
+      </div>
+      <div class="skills-map">
+        <svg class="skills-connections" viewBox="0 0 1000 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path stroke="#8040b5" d="M500 450 160 80M500 450 840 820" />
+          <path stroke="#007acb" d="M500 450V80M500 450H160M500 450 160 820" />
+          <path stroke="#188b49" d="M500 450 840 80" />
+          <path stroke="#008f87" d="M500 450 840 260M500 450V820" />
+          <path stroke="#ae208b" d="M500 450H160" />
+          <path stroke="#b96500" d="M500 450H840" />
+          <path stroke="#a47800" d="M500 450 160 640" />
+          <path stroke="#d52b60" d="M500 450 840 640" />
+          <path stroke="#007acb" d="M500 450 160 260" />
+        </svg>
+        <div class="skills-hub">
+          <span class="skills-code" aria-hidden="true">&lt;/&gt;</span>
+          <p>C# / .NET</p>
+          <span>Full stack & backend</span>
+        </div>
+        @for (skill of skills; track skill.id) {
+          <article class="skill-card" [class]="'skill-card skill-' + skill.id" [style.--skill-color]="skill.color" [attr.aria-labelledby]="'skill-' + skill.id">
+            <h3 [id]="'skill-' + skill.id">
+              <span class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path [attr.d]="skill.icon" /></svg></span>
+              {{ skill.title }}
+            </h3>
+            <ul>
+              @for (item of skill.items; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </article>
+        }
+      </div>
+    </section>
+
     <section class="work" id="projecten" aria-labelledby="work-title">
       <div class="section-heading">
-        <div><p class="eyebrow">01 / Mijn projecten</p><h2 id="work-title">Van idee naar <em>iets echts.</em></h2></div>
+        <div><p class="eyebrow">02 / Mijn projecten</p><h2 id="work-title">Van idee naar <em>iets echts.</em></h2></div>
         <p>Een selectie van wat ik bouw, probeer en steeds een beetje beter maak.</p>
       </div>
 
@@ -57,7 +96,7 @@
     </section>
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div><p class="eyebrow">02 / Zeg hallo</p><h2 id="contact-title">Samen iets <em>maken?</em></h2><p>Benieuwd naar mijn werk of gewoon zin om ideeën uit te wisselen? Je vindt me hier.</p></div>
+      <div><p class="eyebrow">03 / Zeg hallo</p><h2 id="contact-title">Samen iets <em>maken?</em></h2><p>Benieuwd naar mijn werk of gewoon zin om ideeën uit te wisselen? Je vindt me hier.</p></div>
       <div class="contact-links"><a class="btn primary" href="https://www.linkedin.com/in/ivansanderdejong" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a class="btn secondary" href="https://github.com/IvandeJong" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>

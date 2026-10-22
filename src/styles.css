@@ -47,14 +47,42 @@ p { margin: 0; }
 .hero-art { aspect-ratio: 1; max-width: 420px; width: 100%; margin: auto; border-radius: 50%; background: #e8efd9; overflow: hidden; }
 .hero-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-.work { padding: clamp(4rem, 7vw, 7rem) 0; border-top: 1px solid var(--line); }
+.skills, .work { padding: clamp(4rem, 7vw, 7rem) 0; border-top: 1px solid var(--line); }
+.skills-map { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(5, minmax(148px, auto)); grid-template-areas: "database backend frontend" "integration hub testing" "automation hub delivery" "observability hub infrastructure" "devops azure security"; gap: 30px 42px; padding: 14px 0 0; }
+.skills-connections { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke-width: 2.5; pointer-events: none; }
+.skills-hub { grid-area: hub; z-index: 1; align-self: center; justify-self: center; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 110%; max-width: 300px; aspect-ratio: 1; border-radius: 50%; background: #052a52; color: white; text-align: center; }
+.skills-hub p { font: 700 clamp(1.7rem, 3vw, 2.5rem)/1.3 "Bricolage Grotesque", system-ui, sans-serif; }
+.skills-hub > span:last-child { margin-top: 0.35rem; font-size: 0.95rem; font-weight: 600; }
+.skills-code { font: 600 3.5rem/1.4 monospace; }
+.skill-card { position: relative; z-index: 2; min-width: 0; align-self: stretch; border: 1px solid var(--skill-color); border-radius: 14px; background: color-mix(in srgb, var(--skill-color) 5%, white); }
+.skill-card h3 { position: relative; display: flex; align-items: center; min-height: 48px; padding: 0.65rem 0.6rem 0.65rem 62px; border-radius: 12px 12px 0 0; background: var(--skill-color); color: white; font-family: "Inter", system-ui, sans-serif; font-size: 0.95rem; line-height: 1.3; letter-spacing: -0.025em; }
+.skill-icon { position: absolute; left: -5px; top: -13px; display: grid; place-items: center; width: 60px; height: 60px; border: 1px solid #ffffff66; border-radius: 50%; background: var(--skill-color); }
+.skill-icon svg { width: 31px; height: 31px; }
+.skill-card ul { margin: 0; padding: 0.9rem 1rem 1rem 2.25rem; font-size: 0.88rem; line-height: 1.5; }
+.skill-card li { padding-left: 0.15rem; overflow-wrap: anywhere; }
+.skill-card li + li { margin-top: 0.35rem; }
+.skill-card li::marker { color: var(--skill-color); }
+.skill-database { grid-area: database; }
+.skill-backend { grid-area: backend; }
+.skill-frontend { grid-area: frontend; }
+.skill-integration { grid-area: integration; }
+.skill-testing { grid-area: testing; }
+.skill-automation { grid-area: automation; }
+.skill-delivery { grid-area: delivery; }
+.skill-observability { grid-area: observability; }
+.skill-infrastructure { grid-area: infrastructure; }
+.skill-devops { grid-area: devops; }
+.skill-azure { grid-area: azure; }
+.skill-security { grid-area: security; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2.5rem; }
 .section-heading h2, .contact h2 { margin-top: 0.7rem; font-size: clamp(2.5rem, 4vw, 4rem); }
 .section-heading h2 em, .contact h2 em { color: #608c2d; font-style: normal; }
 .section-heading > p { max-width: 26ch; color: var(--muted); font-size: 0.94rem; }
 .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
-.project-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--card); transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease; }
-.project-card:hover, .project-card:focus-within { transform: translateY(-8px); border-color: #a6c47e; box-shadow: 0 22px 35px -18px rgba(23, 36, 31, 0.26); }
+.project-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.project-card, .skill-card { transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease; }
+.project-card:hover, .project-card:focus-within, .skill-card:hover, .skill-card:focus-within { transform: translateY(-8px); box-shadow: 0 22px 35px -18px rgba(23, 36, 31, 0.26); }
+.project-card:hover, .project-card:focus-within { border-color: #a6c47e; }
 .project-image { position: relative; overflow: hidden; aspect-ratio: 10 / 7; background: #dce8dc; }
 .project-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms ease; }
 .project-card:hover img, .project-card:focus-within img { transform: scale(1.07); }
@@ -84,10 +112,15 @@ p { margin: 0; }
 .back { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; font-weight: 600; }
 
 @media (max-width: 980px) {
+  .skills-map { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; grid-template-areas: none; gap: 30px 24px; }
+  .skills-connections { display: none; }
+  .skills-hub { grid-area: auto; grid-column: 1 / -1; width: 240px; margin-bottom: 0.5rem; }
+  .skill-card { grid-area: auto; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero { grid-template-columns: 1fr 0.7fr; gap: 1.5rem; }
 }
 @media (max-width: 700px) {
+  .skills-map { grid-template-columns: 1fr; }
   .site-header { align-items: flex-start; }
   .site-header nav { justify-content: flex-end; gap: 0.6rem 1rem; }
   .hero { grid-template-columns: 1fr; padding: 4rem 0; }
@@ -104,6 +137,6 @@ p { margin: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .btn, .project-card, .project-image img { transition: none; }
-  .btn:hover, .project-card:hover, .project-card:focus-within, .project-card:hover img, .project-card:focus-within img { transform: none; }
+  .btn, .project-card, .skill-card, .project-image img { transition: none; }
+  .btn:hover, .project-card:hover, .project-card:focus-within, .skill-card:hover, .skill-card:focus-within, .project-card:hover img, .project-card:focus-within img { transform: none; }
 }
