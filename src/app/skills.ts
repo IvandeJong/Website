@@ -15,7 +15,7 @@ export const SKILLS: readonly SkillCategory[] = [
   {
     id: 'backend', title: 'Backend', color: '#007acb',
     icon: 'M4 3h16v7H4zM4 14h16v7H4zM7 6h.01M7 17h.01M11 6h6M11 17h6',
-    items: ['C#', '.NET Core', 'ASP.NET Core', 'MVC', 'OpenAPI'],
+    items: ['C#', '.NET 10', 'Blazor', 'MVC', 'OpenAPI'],
   },
   {
     id: 'frontend', title: 'Frontend', color: '#188b49',
@@ -24,18 +24,18 @@ export const SKILLS: readonly SkillCategory[] = [
   },
   {
     id: 'ervaring', title: 'Overig', color: '#007acb',
-    icon: 'M12 5C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1zm0 0v15',
-    items: ['WBSO', 'Agile/Scrum'],
+      icon: 'M12 5C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1zm0 0v15',
+      items: ['WBSO', 'ISO', 'Kennisdeelsessies' , 'Agile/Scrum'],
   },
   {
     id: 'testing', title: 'Testing', color: '#008f87',
     icon: 'M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6zM8 12l3 3 5-6',
-    items: ['Playwright', 'Unit testing', 'Integration testing'],
+    items: ['Playwright', 'Unit testing', 'bUnit' , 'Integration testing'],
   },
   {
     id: 'automation', title: 'AI & automatisering', color: '#ae208b',
     icon: 'm9 3 2 6 6 2-6 2-2 6-2-6-6-2 6-2zM19 2v6M16 5h6',
-    items: ['Copilot Studio (agents)', 'GitHub Copilot'],
+    items: ['Copilot Studio (agents)', 'GitHub Copilot', 'MCP Server'],
   },
   {
     id: 'delivery', title: 'CI/CD', color: '#b96500',
@@ -50,7 +50,7 @@ export const SKILLS: readonly SkillCategory[] = [
   {
     id: 'infrastructure', title: 'Infrastructure as Code', color: '#d52b60',
     icon: 'M6 19a5 5 0 0 1-1-10 7 7 0 0 1 13-2 6 6 0 0 1 0 12z',
-    items: ['Bicep-templates', 'Azure-configuratie vastleggen en bijwerken'],
+      items: ['Softwarearchitectuur', 'Bicep-templates', 'Azure-configuratie vastleggen en bijwerken'],
   },
   {
     id: 'devops', title: 'Azure DevOps', color: '#007acb',
@@ -65,6 +65,6 @@ export const SKILLS: readonly SkillCategory[] = [
   {
     id: 'security', title: 'Security', color: '#8040b5',
     icon: 'M12 2 3 6v6c0 5 9 10 9 10s9-5 9-10V6zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6',
-    items: ['ISO', 'Security by design'],
+    items: ['Azure keyvault', 'EntraId managed identities', 'Security by design'],
   },
 ];

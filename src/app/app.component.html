@@ -43,9 +43,11 @@
           <path stroke="#007acb" d="M500 450 160 260" />
         </svg>
         <div class="skills-hub">
-          <span class="skills-code" aria-hidden="true">&lt;/&gt;</span>
-          <p>C# / .NET</p>
-          <span>Full stack & backend</span>
+          <div class="skills-hub-face">
+            <span class="skills-code" aria-hidden="true">&lt;/&gt;</span>
+            <p>C# / .NET</p>
+            <span>Full stack & backend</span>
+          </div>
         </div>
         @for (skill of skills; track skill.id) {
           <article class="skill-card" [class]="'skill-card skill-' + skill.id" [style.--skill-color]="skill.color" [attr.aria-labelledby]="'skill-' + skill.id">
